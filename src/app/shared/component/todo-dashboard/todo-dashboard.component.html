@@ -1,0 +1,17 @@
+<h2 class="bg-info p-2 rounded">Todos CURD Using @Input and @Output</h2>
+<div class="row mb-3">
+    <div class="col-md-6">
+        <app-todo-form
+        (toUpdateTodo) = 'onUpdateTodo($event)'
+        [editTodo] = 'editTodo'
+        (newTodoItem) = 'onAddTodo($event)'
+        ></app-todo-form>
+    </div>
+    <div class="col-md-6">
+        <app-todo-list
+        (editTodo) = 'onEditTodo($event)'
+        (removeTodo) = 'onRemoveTodo($event)'
+        [todoArr] = 'todoArr'
+        ></app-todo-list>
+    </div>
+</div>

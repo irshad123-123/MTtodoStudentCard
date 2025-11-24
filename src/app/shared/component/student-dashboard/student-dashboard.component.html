@@ -1,0 +1,17 @@
+<h2 class="bg-warning p-2 rounded">Student CRUD Using @Input and @Output</h2>
+<div class="row my-3">
+    <div class="col-md-4">
+        <app-student-form
+        (updatedObj) = 'onUpdateObj($event)'
+        [editStd] = 'editStd'
+        (AddNewStd) = 'onAddStd($event)'
+        ></app-student-form>
+    </div>
+    <div class="col-md-8">
+        <app-student-list
+        (editObj) = 'onEditStd($event)'
+        (removeId) = 'onRemoveStd($event)'
+        [stdArr] = 'stdArr'
+        ></app-student-list>
+    </div>
+</div>

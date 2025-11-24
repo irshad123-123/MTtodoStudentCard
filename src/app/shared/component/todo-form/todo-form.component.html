@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <form #todoForm="ngForm" (ngSubmit) = 'onAddTodo()'>
+            <div class="form-group">
+                <label for="todoItem">Todo Item</label>
+                <input 
+                required 
+                ngModel
+                name="todoItem"
+                class="form-control" id="todoItem">
+            </div>
+            <button type="submit" [disabled] = 'todoForm.invalid' *ngIf = '!isEditMode' class="btn-block" mat-raised-button color="primary">Add Todo</button>
+            <button (click) = 'onUpdateTodo()' type="button" *ngIf = 'isEditMode' class="btn-block" mat-raised-button color="primary">Update Todo</button>
+            <button (click) = 'onCancel()' type="button" *ngIf = 'isEditMode' class="btn-block" mat-raised-button color="primary">Cancel</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="card">
+    <div
+    [ngClass] = "{
+        'bg-warning' : cardArrGet.about === 'Theory',
+        'bg-primary' : cardArrGet.about === 'Coding'
+    }"
+    class="card-header d-flex justify-content-between">
+        <strong>{{cardArrGet.title}}</strong> <div>{{cardArrGet.about}}</div>
+    </div>
+    <div class="card-body">
+        <p>{{cardArrGet.content}}</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <button
+        (click) = 'onEdit(cardArrGet)'
+        mat-raised-button color="primary">Edit</button>
+        <button
+        (click) = 'onRemove(cardArrGet.cardId)'
+        mat-raised-button color="warn">Remove</button>
+    </div>
+</div>

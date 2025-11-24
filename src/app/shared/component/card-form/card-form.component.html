@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-body">
+        <form #cardForm="ngForm" (ngSubmit) = 'onAddCard()'>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                ngModel
+                required
+                name="title"
+                class="form-control" id="title">
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <input
+                ngModel
+                required
+                name="content"
+                class="form-control" id="title">
+            </div>
+            <div class="form-group">
+                <label for="about">About</label>
+                <select
+                ngModel
+                required
+                name="about"
+                class="form-control" id="title">
+            <option value="Theory">Theory</option>
+            <option value="Coding">Coding</option>
+            </select>
+            </div>
+            <button [disabled] = 'cardForm.invalid' *ngIf = '!isEditMode' type="submit" class="btn-block" mat-raised-button color="primary">Add Card</button>
+            <button
+            (click) = 'onUpdate()'
+            *ngIf = 'isEditMode' type="button" class="btn-block" mat-raised-button color="primary">Update Card</button>
+            <button
+            (click) = 'onCancel()'
+            *ngIf = 'isEditMode' type="button" class="btn-block" mat-raised-button color="primary">Cancel</button>
+        </form>
+    </div>
+</div>
