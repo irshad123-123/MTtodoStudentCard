@@ -8,7 +8,7 @@
         ></app-card-form>
     </div>
 </div>
-<div class="row my-3">
+<div class="row my-3" *ngIf = 'cardArr.length>0; else : noCard'>
     <div class="col-md-4 mb-3 h-100" *ngFor = 'let card of cardArr'>
         <app-card-list
         (editCard) = 'editCard($event)'
@@ -17,3 +17,6 @@
         ></app-card-list>
     </div>
 </div>
+<ng-template #noCard>
+    <p class="alert alert-success">There is no card !!!</p>
+</ng-template>
